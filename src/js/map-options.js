@@ -9,8 +9,8 @@
     scrollwheel: true,
     draggable: true,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
-    maxZoom: 11,
-    minZoom: 9,
+    // maxZoom: 11,
+    // minZoom: 9,
     zoomControlOptions: {
       position: google.maps.ControlPosition.BOTTOM_LEFT,
       style: google.maps.ZoomControlStyle.DEFAULT
