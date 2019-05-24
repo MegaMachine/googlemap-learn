@@ -20,6 +20,7 @@
       },
       addMarker: function(opts) {
         var marker;
+        var infoWidow;
         opts.position = {
           lat: opts.lat,
           lng: opts.lng
@@ -36,13 +37,17 @@
           this._on({
             obj: marker,
             event: 'click',
-            callback: function(e) {
-              var infoWidow = new google.maps.InfoWindow({
-                content: opts.content
-              });
-              infoWidow.open(this.gMap, marker);
-              console.log(infoWidow);
-              console.log(marker);
+            callback: function(e) {       
+              if (!infoWidow){
+                infoWidow = new google.maps.InfoWindow({
+                  content: opts.content
+                });
+              } 
+              if(!infoWidow.getMap()){
+                infoWidow.open(this.gMap, marker);
+              } else {
+                infoWidow.close();
+              }
             }
           });
         }
