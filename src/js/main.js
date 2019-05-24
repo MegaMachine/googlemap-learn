@@ -6,7 +6,19 @@
 
   //map
   var map = new mapster.create(element, options);
-  map.addMarker(37.791350, -122.435883, '../img/icons/map-pin.png');
+  map.addMarker({
+    lat: 37.791350,
+    lng: -122.435883,
+    draggable: false,
+    id:1,
+    event: {
+      name: 'click',
+      callback: function(e) {
+        console.log(e);
+      }
+    },
+    icon: '../img/icons/map-pin.png'
+  });
   // var marker = new google.maps.Marker({
   //   position: {
   //     lat: 37.791350,
