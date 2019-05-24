@@ -1,0 +1,57 @@
+#map-canvas1, #map-canvas2{
+  height: 100%;
+}
+
+.gm-style{
+  .gm-style-iw-c{
+    border-radius: 0;
+    padding: 0;
+    &:after{
+      left: auto;
+      right: 0;
+    }
+  }
+  button{
+    display: none !important;
+  }
+  .gm-style-iw-d{
+    overflow: visible !important;
+    &>div{
+      width: 100%;
+    }
+  }
+}
+
+.custom-infowindow{
+  width: 100%;
+  .custom-infowindow-title{
+    padding: 20px;
+    background: blue;
+    p{ 
+      font-size: 16px;
+      color:#fff;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+  }
+  .custom-infowindow-list{
+    background: #fff;
+    ul{
+      padding: 20px;
+      margin: 0;
+      list-style:none;
+      li{
+        margin-bottom: 10px;
+        img{
+          width: 20px;
+          margin-right: 10px;
+        }
+        span{
+          font-size: 14px;
+          color:#333;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

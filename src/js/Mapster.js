@@ -34,6 +34,13 @@
             callback: opts.event.callback
           })
         }
+        if (opts.infoOpen){
+          infoWindow = new google.maps.InfoWindow({
+            content: opts.content
+          });
+          this.infoWindows.push(infoWindow);
+          infoWindow.open(this.gMap, marker);
+        }
         if (opts.content) {
           this._on({
             obj: marker,
