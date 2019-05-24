@@ -1,16 +1,10 @@
-(function(window, google){
+(function(window, google, mapster){
   
   //map options
-  var options = {
-    center: {
-      lat: 37.791350,
-      lng: -122.435883  
-    },
-    zoom: 10
-  }
+  var options = mapster.MAP_OPTIONS;
   var element = document.getElementById('map-canvas');
 
   //map
   var map = new google.maps.Map(element, options);
 
-})(window, google);
+}(window, google, window.Mapster || (window.Mapster = {})));

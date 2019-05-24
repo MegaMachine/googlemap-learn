@@ -77,6 +77,7 @@ function styles(){
 // Gulp function for gulp task Customs script
 function scripts(){
   const jsPaths = [
+    './src/js/map-options.js',
     './src/js/main.js'
   ]
   return gulp.src(jsPaths)
