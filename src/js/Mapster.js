@@ -17,6 +17,21 @@
         google.maps.event.addListener(this.gMap, event, function(e){
           callback.call(self, e);
         });
+      },
+      addMarker: function(lat, lng, icon, draggable) {
+        this._createMarker(lat, lng, icon, draggable);
+      },
+      _createMarker: function(lat, lng, icon, draggable) {
+        var opts = {
+          position: {
+            lat: lat,
+            lng: lng
+          },
+          draggable: draggable,
+          map: this.gMap,
+          icon: icon
+        }
+        return new google.maps.Marker(opts);
       }
     }
     return Mapster;
