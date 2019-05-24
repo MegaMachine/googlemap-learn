@@ -32,6 +32,21 @@
             callback: opts.event.callback
           })
         }
+        if (opts.content) {
+          this._on({
+            obj: marker,
+            event: 'click',
+            callback: function(e) {
+              var infoWidow = new google.maps.InfoWindow({
+                content: opts.content
+              });
+              infoWidow.open(this.gMap, marker);
+              console.log(infoWidow);
+              console.log(marker);
+            }
+          });
+        }
+        return marker;
       },
       _createMarker: function(opts) {
         opts.map = this.gMap;
