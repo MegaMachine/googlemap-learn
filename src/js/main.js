@@ -6,15 +6,22 @@
 
   //map
   var map = new mapster.create(element, options);
-  var marker = map.addMarker({
-    lat: 37.791350,
-    lng: -122.435883,
+  var marker1 = map.addMarker({
+    lat: 49.8425738,
+    lng: 24.0180441,  
     draggable: false,
     id:1,
     content:'I like food',
     icon: '../img/icons/map-pin.png'
   });
-
+  var marker2 = map.addMarker({
+    lat: 49.8401135,
+    lng: 24.0249235,  
+    draggable: false,
+    id:2,
+    content:'I like food',
+    icon: '../img/icons/map-pin.png'
+  });
   // var marker = new google.maps.Marker({
   //   position: {
   //     lat: 37.791350,

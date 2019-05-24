@@ -5,6 +5,7 @@
       this.gMap = new google.maps.Map(element, opts);
     }
     Mapster.prototype = {
+      infoWindows:[],
       zoom: function(level) {
         if(level) {
           this.gMap.setZoom(level);
@@ -20,7 +21,7 @@
       },
       addMarker: function(opts) {
         var marker;
-        var infoWidow;
+        var infoWindow;
         opts.position = {
           lat: opts.lat,
           lng: opts.lng
@@ -37,16 +38,22 @@
           this._on({
             obj: marker,
             event: 'click',
-            callback: function(e) {       
-              if (!infoWidow){
-                infoWidow = new google.maps.InfoWindow({
+            callback: function(e) {              
+              if (!infoWindow){
+                infoWindow = new google.maps.InfoWindow({
                   content: opts.content
                 });
+                this.infoWindows.push(infoWindow);
               } 
-              if(!infoWidow.getMap()){
-                infoWidow.open(this.gMap, marker);
+              if(!infoWindow.getMap()){
+                if(this.infoWindows.length){
+                  for (var item in this.infoWindows){
+                      this.infoWindows[item].close();
+                  }   
+                } 
+                infoWindow.open(this.gMap, marker);
               } else {
-                infoWidow.close();
+                infoWindow.close();
               }
             }
           });

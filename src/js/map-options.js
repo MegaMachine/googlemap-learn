@@ -161,11 +161,11 @@
   ];
   mapster.MAP_OPTIONS = {
     center: {
-      lat: 37.791350,
-      lng: -122.435883  
+      lat: 49.844181,
+      lng: 24.0222526  
     },
-    zoom: 10,
-    disableDefaultUI: false,
+    zoom: 15,
+    disableDefaultUI: true,
     scrollwheel: true,
     draggable: true,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
