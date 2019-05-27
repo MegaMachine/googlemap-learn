@@ -77,6 +77,7 @@ function styles(){
 // Gulp function for gulp task Customs script
 function scripts(){
   const jsPaths = [
+    './src/js/markerclusterer.js',
     './src/js/List.js',
     './src/js/Mapster.js',
     './src/js/map-options.js',

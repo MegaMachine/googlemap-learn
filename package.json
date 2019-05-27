@@ -30,6 +30,7 @@
     "gulp-uglify": "^3.0.1"
   },
   "dependencies": {
+    "@google/markerclusterer": "^1.0.3",
     "bootstrap": "^4.2.1",
     "jquery": "^3.3.1",
     "normalize.css": "^8.0.1"
