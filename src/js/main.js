@@ -6,7 +6,7 @@
 
   //map
   var map = new mapster.create(element, options);
-  var marker = map.addMarker({
+  var marker1 = map.addMarker({
     lat: 37.791350,
     lng: -122.435883,
     draggable: false,
@@ -14,7 +14,16 @@
     content:'I like food',
     icon: '../img/icons/map-pin.png'
   });
-
+  var marker2 = map.addMarker({
+    lat: 37.891350,
+    lng: -122.535883,
+    draggable: false,
+    id:1,
+    content:'I like food',
+    icon: '../img/icons/map-pin.png'
+  });
+  map._removeMarker(marker2);
+  console.log(map.findMarkerByLat(37.791350));
   // var marker = new google.maps.Marker({
   //   position: {
   //     lat: 37.791350,
