@@ -51,6 +51,13 @@
         }
         return marker;
       },
+      setPano: function(element, opts){
+        var panorama = new google.maps.StreetViewPanorama(element, opts);
+        this.gMap.setStreetView(panorama);
+        if (opts.events) {
+          this._attachEvents(panorama, opts.events);
+        }
+      },
       findBy: function(callback) {
         return this.markers.find(callback)
       },
@@ -66,11 +73,11 @@
           })
         });
       },
-      _attachEvents: function(marker, events){
+      _attachEvents: function(obj, events){
         var self = this;
         events.forEach(function(event){
           self._on({
-            obj: marker,
+            obj: obj,
             event: event.name,
             callback: event.callback
           })

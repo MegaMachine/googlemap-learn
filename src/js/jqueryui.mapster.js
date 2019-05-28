@@ -27,7 +27,13 @@
     getMarkers: function(){
       return this.map.markers.items;
     },
-    
+    setPano: function(selector, opts){
+      var elements = $(selector),
+          self = this;
+      $.each(elements, function(key, element){
+        self.map.setPano(element, opts);
+      })
+    },
     // Events bound via _on are removed automatically
     // revert other modifications here
     _destroy: function() {

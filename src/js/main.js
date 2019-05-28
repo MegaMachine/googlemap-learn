@@ -23,28 +23,35 @@
     ],
     icon: '../img/icons/map-pin.png'
   });
-  $mapster.mapster('addMarker' , {
-    lat: 37.891350,
-    lng: -122.535883,
-    draggable: true,
-    id:2,
-    events: [
+  $mapster.mapster('setPano', '#pip-pano', {
+    position: {
+      lat: 37.791350,
+      lng: -122.435883,
+    },
+    pov: {
+      heading: 200, // horisontal camera view 
+      pitch: 0  // vertical camera view
+    },
+    events:[
       {
-        name: 'click',
-        callback: function(e, marker){
-          console.log(e);
-          console.log(marker);
-          console.log(this)
-        }
-      },{
-        name: 'dragend',
+        name: 'position_changed',
         callback: function(){
-          alert('dragged');
+          console.log('changed position');
+        }
+      },
+      {
+        name: 'pov_changed',
+        callback: function(){
+          console.log('changed pov');
+        }
+      },
+      {
+        name: 'links_changed',
+        callback: function(e, panorama){
+          console.log(panorama.getLinks());
         }
       }
-    ],
-    icon: '../img/icons/map-pin.png'
+    ]
   });
-
   console.log($mapster.mapster('getMarkers'))
 }(window, jQuery)); 
