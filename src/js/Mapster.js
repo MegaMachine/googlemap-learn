@@ -16,12 +16,6 @@
           return this.gMap.getZoom();
         }
       },
-      _on: function(opts) {
-        var self = this;
-        google.maps.event.addListener(opts.obj, opts.event, function(e){
-          opts.callback.call(self, e);
-        });
-      },
       addMarker: function(opts) {
         var marker;
         var infoWidow;
@@ -34,12 +28,8 @@
           this.markerClusterer.addMarker(marker);
         }
         this.markers.add(marker);
-        if (opts.event) {
-          this._on({
-            obj: marker,
-            event: opts.event.name,
-            callback: opts.event.callback
-          })
+        if (opts.events) {
+          this._attachEvents(marker, opts.events);
         }
         if (opts.content) {
           this._on({
@@ -74,6 +64,22 @@
               marker.setMap(null);
             }
           })
+        });
+      },
+      _attachEvents: function(marker, events){
+        var self = this;
+        events.forEach(function(event){
+          self._on({
+            obj: marker,
+            event: event.name,
+            callback: event.callback
+          })
+        })
+      },
+      _on: function(opts) {
+        var self = this;
+        google.maps.event.addListener(opts.obj, opts.event, function(e){
+          opts.callback.call(self, e, opts.obj);
         });
       },
       _createMarker: function(opts) {
