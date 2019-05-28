@@ -16,7 +16,24 @@
     },
 
     addMarker: function( options ) {
-      return this.map.addMarker(options);
+      var self = this;
+      if(options.location) {
+        this.map.geocode({
+          address: options.location, //'Golden Gate Bridge, San Jrancisco, CA'
+          success: function(results) {
+            results.forEach(function(result){
+              options.lat = result.geometry.location.lat();
+              options.lng =  result.geometry.location.lng();
+              self.map.addMarker(options);
+            });
+          },
+          error: function(status) {
+            console.error(status);
+          }
+        });
+      } else {  
+        this.map.addMarker(options);
+      }
     },
     findMarker: function(callback){
       return this.map.findBy(callback)

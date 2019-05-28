@@ -1,4 +1,4 @@
-(function(window, $ ){
+(function(window, google, $ ){
   
   var $mapster = $('#map-canvas').mapster(Mapster.MAP_OPTIONS);
   $mapster.mapster('addMarker' , {
@@ -48,10 +48,12 @@
       {
         name: 'links_changed',
         callback: function(e, panorama){
-          console.log(panorama.getLinks());
+          console.log(panorama.getLinks())
         }
       }
     ]
   });
-  console.log($mapster.mapster('getMarkers'))
-}(window, jQuery)); 
+  $mapster.mapster('addMarker', {
+    location: 'Golden Gate Bridge, San Jrancisco, CA'
+  })
+}(window, google, jQuery)); 

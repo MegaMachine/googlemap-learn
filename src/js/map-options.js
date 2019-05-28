@@ -179,6 +179,7 @@
       position: google.maps.ControlPosition.LEFT_BOTTOM
     },
     styles: styles,
-    cluster: false
+    cluster: false,
+    geocoder: true
   }
 }(window, google, window.Mapster || (window.Mapster = {})));
