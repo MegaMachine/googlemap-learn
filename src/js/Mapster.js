@@ -69,7 +69,7 @@
         this.markers.find(callback, function(markers) {
           markers.forEach(function(marker){
             if(self.markerClusterer){
-              self.markerClusterer.removeMarker(marker)
+              self.markerClusterer.removeMarker(marker);
             } else {
               marker.setMap(null);
             }

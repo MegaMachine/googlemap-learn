@@ -16,21 +16,8 @@
       icon: '../img/icons/map-pin.png'
     });
   }
-
-  // var marker2 = map.addMarker({
-  //   lat: 37.891350,
-  //   lng: -122.535883,
-  //   draggable: false,
-  //   id:2,
-  //   content:'I like food',
-  //   icon: '../img/icons/map-pin.png'
-  // });
-
-  var found = map.findBy(function(marker, index){
-    return marker.id === 5;
-  });
   map.removeBy(function(marker){
     return marker.id === 5;
   })
-  console.log(found)
+
 }(window, google, window.Mapster || (window.Mapster = {}))); 
