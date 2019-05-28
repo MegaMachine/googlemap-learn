@@ -34,7 +34,9 @@ function stylesLibs() {
 function scriptsLibs(){
   const scriptsLibs = [
     './node_modules/jquery/dist/jquery.js',
-    './node_modules/bootstrap/dist/js/bootstrap.js'
+    './node_modules/bootstrap/dist/js/bootstrap.js',
+    './src/js/jquery-1.12.4.js',
+    './src/js/jquery-ui.js'
   ];
   return gulp.src(scriptsLibs)
     .pipe(sourcemaps.init())
@@ -81,6 +83,7 @@ function scripts(){
     './src/js/List.js',
     './src/js/Mapster.js',
     './src/js/map-options.js',
+    './src/js/jqueryui.mapster.js',
     './src/js/main.js'
   ]
   return gulp.src(jsPaths)

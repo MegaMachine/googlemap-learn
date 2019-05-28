@@ -1,31 +1,50 @@
-(function(window, google, mapster){
+(function(window, $ ){
   
-  //map options
-  var options = mapster.MAP_OPTIONS;
-  var element = document.getElementById('map-canvas');
-
-  //map
-  var map = new mapster.create(element, options);
-    var marker1 = map.addMarker({
-      lat: 37.791350,
-      lng: -122.435883,
-      draggable: true,
-      id:1,
-      events: [
-        {
-          name: 'click',
-          callback: function(e, marker){
-            console.log(e);
-            console.log(marker);
-            console.log(this)
-          }
-        },{
-          name: 'dragend',
-          callback: function(){
-            alert('dragged');
-          }
+  var $mapster = $('#map-canvas').mapster(Mapster.MAP_OPTIONS);
+  $mapster.mapster('addMarker' , {
+    lat: 37.791350,
+    lng: -122.435883,
+    draggable: true,
+    id:1,
+    events: [
+      {
+        name: 'click',
+        callback: function(e, marker){
+          console.log(e);
+          console.log(marker);
+          console.log(this)
         }
-      ],
-      icon: '../img/icons/map-pin.png'
-    });
-}(window, google, window.Mapster || (window.Mapster = {}))); 
+      },{
+        name: 'dragend',
+        callback: function(){
+          alert('dragged');
+        }
+      }
+    ],
+    icon: '../img/icons/map-pin.png'
+  });
+  $mapster.mapster('addMarker' , {
+    lat: 37.891350,
+    lng: -122.535883,
+    draggable: true,
+    id:2,
+    events: [
+      {
+        name: 'click',
+        callback: function(e, marker){
+          console.log(e);
+          console.log(marker);
+          console.log(this)
+        }
+      },{
+        name: 'dragend',
+        callback: function(){
+          alert('dragged');
+        }
+      }
+    ],
+    icon: '../img/icons/map-pin.png'
+  });
+
+  console.log($mapster.mapster('getMarkers'))
+}(window, jQuery)); 

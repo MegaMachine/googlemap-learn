@@ -179,23 +179,6 @@
       position: google.maps.ControlPosition.LEFT_BOTTOM
     },
     styles: styles,
-    cluster: {
-      options: {
-        // imagePath: '../img/icons/map-pin.png',
-        styles:[{
-          url:'../img/icons/m1.png',
-          height: 55,
-          width: 55,
-          textColor: '#333',
-          textSize: 18
-        },{
-          url:'../img/icons/m2.png',
-          height: 55,
-          width: 55,
-          textColor: '#333',
-          textSize: 18
-        }]
-      }
-    }
+    cluster: false
   }
 }(window, google, window.Mapster || (window.Mapster = {})));
