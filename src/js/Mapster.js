@@ -19,6 +19,9 @@
           return this.gMap.getZoom();
         }
       },
+      centeredMap: function(obj) {
+        this.gMap.setCenter(new google.maps.LatLng(obj.lat, obj.lng), 15);
+      },
       addMarker: function(opts) {
         var marker;
         var infoWidow;
@@ -86,6 +89,13 @@
             opts.error.call(this, status);
           }
         });
+      },
+      getCurrentPosition: function(callback) {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position){
+            callback.call(this, position);
+          })
+        }
       },
       _attachEvents: function(obj, events){
         var self = this;

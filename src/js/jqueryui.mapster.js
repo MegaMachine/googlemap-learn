@@ -51,6 +51,12 @@
         self.map.setPano(element, opts);
       })
     },
+    getCurrentPosition: function(callback){
+      this.map.getCurrentPosition(callback);
+    },
+    centeredMap: function(obj){
+      this.map.centeredMap(obj);
+    },
     // Events bound via _on are removed automatically
     // revert other modifications here
     _destroy: function() {
