@@ -18,3 +18,41 @@ body{
   left: 0;
   z-index: 1;
 }
+
+#test{
+  padding:90px 0;
+  .test-items{
+    display: flex;
+    justify-content: space-between;
+    .mini-item{
+      flex-basis: 1.5%;
+      position: relative;
+      span{
+        position: absolute;
+        top:25%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        letter-spacing: 2px;
+        z-index: -1;
+      }
+    }
+    .item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-basis: 30%;
+      &-img{
+        border-radius: 50%;
+        box-shadow: 0 0 30px 50px #fff;
+        img{
+
+        }
+      }
+      &-text{
+        p{
+
+        }
+      }
+    }
+  }
+}
